@@ -1,0 +1,19 @@
+name: c3aidatalake-notebooks-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7.*
+  - numpy
+  - matplotlib
+  - pandas=1.0.*
+  - requests
+  - seaborn
+  - scipy
+  - r-base
+  - r-httr
+  - r-maps
+  - r-mapproj
+  - r-tidyverse
+  - r-jsonlite
+  - r-fitdistrplus
+  - r-hrbrthemes
