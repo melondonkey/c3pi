@@ -14,3 +14,16 @@ test <- fromJSON(rawToChar(survey_data$content))
 
 df <- test$objs
 
+##Do it their way
+rover <- 
+  fetch(
+  "surveydata",
+  list(
+    spec = list(
+      limit = -1
+    )
+  ),
+  get_all = TRUE
+)
+
+readr::write_csv(rover, here::here('survey_data.csv'))
