@@ -1,0 +1,19 @@
+---
+title: "Submission Guidelines"
+author: "Joe Dean"
+date: "10/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Non-Obvious Insights
+
+## Two Data Sources from c3 data lake
+ - Womply merchant data?
+
+## What Benefits will the solution bring?  Health and economic
+
+## Estimate those benefits
