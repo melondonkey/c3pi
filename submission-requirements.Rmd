@@ -1,0 +1,48 @@
+---
+title: "submission-requirements"
+author: "Joe Dean"
+date: "10/15/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Questionnaire (200 words max.)
+
+Briefly describe the broader goals of your project. (40 words)
+What specific problem are you trying to solve for this submission? (40 words)
+Briefly describe your approach. (60 words)
+What makes your project unique? (40 words)
+What is the potential impact of your results in the fight against COVID-19? (20 words)
+
+
+## Non-Technical Abstract (100 words max.)
+
+A compelling summary of your submission, composed for a general audience.
+
+## Descriptive Paper (1,000 words max., suggested breakdown below)
+
+Introduction (100 words)
+Problem Description (100 words)
+Broad Approach (200 words)
+Technical Details of Approach (400 words)
+Results (100 words)
+Impact (100 words)
+Demo video (60-120 seconds)
+
+
+## A creative expression of the solution, designed to sell it, while explaining:
+
+Demo your project and the API’s used to run it.
+Make sure to explain the problem being solved and walk-through how your solution works.
+Touch on your results and the potential impact of these results on COVID-19.
+
+## Source Code (or link to GitHub Repository)
+
+The top 25 solutions will be code-reviewed to assure quality.
+
+## List of Data Sources Used:
+At least two datasets used must be from the C3.ai COVID-19 Data Lake.
+All datasets must be open-access and links to any external datasets must be provided.
