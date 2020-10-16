@@ -17,3 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ## What Benefits will the solution bring?  Health and economic
 
 ## Estimate those benefits
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
