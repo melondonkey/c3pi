@@ -1,0 +1,14 @@
+body {
+  color:#00548c; 
+  background-color: #DDDDDD; 
+}
+
+
+.list-group-item{
+  background-color: #00548c;
+  color: white;
+}
+
+.list-group-item.active{
+  background-color: #603777;
+}

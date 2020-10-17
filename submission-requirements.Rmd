@@ -2,7 +2,13 @@
 title: "submission-requirements"
 author: "Joe Dean"
 date: "10/15/2020"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 4
+    code_folding: hide
+    css: mystyle.css
 ---
 
 ```{r setup, include=FALSE}
@@ -11,12 +17,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Questionnaire (200 words max.)
 
-Briefly describe the broader goals of your project. (40 words)
-What specific problem are you trying to solve for this submission? (40 words)
-Briefly describe your approach. (60 words)
-What makes your project unique? (40 words)
-What is the potential impact of your results in the fight against COVID-19? (20 words)
+### Briefly describe the broader goals of your project. (40 words)
 
+Barriers to health seeks to seeks to give local community members and leaders the knowledge they need to overcome local obstacles to health.  County-level views of the data 
+
+#### What specific problem are you trying to solve for this submission? (40 words)
+
+#### Briefly describe your approach. (60 words)
+
+
+#### What makes your project unique? (40 words)
+
+While many projects rightly focus on the spread of the virus, this can be very hard to predict.  Our team instead decided to focus on highlighting the one thing we can control--our own actions and behaviors.  While 
+
+#### What is the potential impact of your results in the fight against COVID-19? (20 words)
+
+Hopefully, we can educate others on ---- and perhaps even help local leaders.  
 
 ## Non-Technical Abstract (100 words max.)
 
@@ -24,13 +40,26 @@ A compelling summary of your submission, composed for a general audience.
 
 ## Descriptive Paper (1,000 words max., suggested breakdown below)
 
-Introduction (100 words)
-Problem Description (100 words)
-Broad Approach (200 words)
-Technical Details of Approach (400 words)
-Results (100 words)
-Impact (100 words)
-Demo video (60-120 seconds)
+### Introduction (100 words)
+
+### Problem Description (100 words)
+
+### Broad Approach (200 words)
+
+### Technical Details of Approach (400 words)
+
+To create the Virus Belief profiles, we used a clustering algorithm.  Since the data consisted of TRUE/FALSE survey responses, algorithms such as k-means were not appropriate, so we fit the model as a mixture of bernoulli vectors and used expectation-maximization to estimate the parameters.  
+
+### Results (100 words)
+
+
+
+### Impact (100 words)
+
+
+## Demo video (60-120 seconds)
+
+Our demo video can be viewed online here: 
 
 
 ## A creative expression of the solution, designed to sell it, while explaining:
@@ -41,8 +70,17 @@ Touch on your results and the potential impact of these results on COVID-19.
 
 ## Source Code (or link to GitHub Repository)
 
-The top 25 solutions will be code-reviewed to assure quality.
+The project repo can be found here: https://github.com/melondonkey/c3pi .
+
+Note this repo was made private for the contest, so the author may need to be reached to unlock the repo.  
 
 ## List of Data Sources Used:
+
+From the c3.ai data lake
+
+In addition, this project also utilizes the County Health Rankings Dataset published by the Robert Wood Johnson Foundation.  https://www.countyhealthrankings.org/sites/default/files/analytic_data2018_0.csv
+
+
+
 At least two datasets used must be from the C3.ai COVID-19 Data Lake.
 All datasets must be open-access and links to any external datasets must be provided.
