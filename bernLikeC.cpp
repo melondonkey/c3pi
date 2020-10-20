@@ -11,7 +11,7 @@ NumericMatrix bernLikeC(NumericMatrix x, NumericMatrix params) {
     for (int j = 0; j < k; j++){
 	  double total = 0;
 	  for (int m = 0; m < ncol; m++){
-	    if(x(i,m) == 0{
+	    if(x(i,m) == 0){
 		  total += log(1.0-params(j,m));
 		} else{
 		  total += log(params(j,m));
