@@ -101,11 +101,15 @@ X <- surveys[,c("coronaSimilarFlu", "coronaOnlyElderly","youngInvulnerable","eld
 X2 <- as.matrix(X*1)
 
 
+# Try many clusters
+set.seed(123)
 
-bmix <- bernoulli_mixture(X2, 6, EM_steps = 30)
+##3-4 best
+bmix <- bernoulli_mixture(X2, 3, EM_steps = 100)
 bmix$convergence
 
 plot(bmix)
 
-bmix$convergence
+surveys$belief_cluster <- paste0('Cluster ',bmix$cluster_assignments)
+
   

@@ -14,3 +14,9 @@ ggplot(surveys, aes(x=trumpApproval, y=coronavirusIntent_Mask)) + stat_smooth() 
 
 ggplot(surveys, aes(x=politicalBelief, y=trumpApproval)) + stat_smooth() #sanity check
 ggplot(surveys, aes(x=politicalParty, y=trumpApproval, color=ethnicity)) + stat_smooth() + geom_point(alpha=.1)
+
+
+
+ggplot(surveys, aes(x=politicalParty, y=trumpApproval, color=belief_cluster)) + stat_smooth() + geom_point(alpha=.1)
+
+ggplot(surveys, aes(x=coronavirusIntent_Mask, fill=belief_cluster)) + geom_density(alpha=.5)
