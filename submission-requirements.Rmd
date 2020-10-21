@@ -76,7 +76,11 @@ Note this repo was made private for the contest, so the author may need to be re
 
 ## List of Data Sources Used:
 
-From the c3.ai data lake
+From the c3.ai data lake we used:
+
+1. Surveys
+2. Locations
+3. Vaccine data
 
 In addition, this project also utilizes the County Health Rankings Dataset published by the Robert Wood Johnson Foundation.  https://www.countyhealthrankings.org/sites/default/files/analytic_data2018_0.csv
 

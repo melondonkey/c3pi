@@ -1,5 +1,7 @@
 library(httr)
 library(jsonlite)
+library(here)
+library(extraDistr)
 source(here::here('example-files', 'c3aidatalake.R'))
 
 
@@ -36,7 +38,8 @@ locations <-
     list(
       spec = list(
         limit = 200,
-        filter= 'contains(id, "_UnitedStates" )'
+        filter= 'contains(id, "_UnitedStates" ) && locationType == "county"' #,
+ #       include = 'this, LaborDetail.laborForce'
       )
     ),
     get_all = FALSE
@@ -52,6 +55,17 @@ rwjf_reference <- data.frame(t(rwjf_reference))
 rwjf_reference$description <- rownames(rwjf_reference)
 colnames(rwjf_reference)[1] <- "variable"
 
+# Get down to the raw metrics
+rwjf2 <-
+  rwjf %>%
+  select(!contains(c('_cilow', 'cihigh', 'numerator', 'denominator', 'other_data'))) %>%
+  filter(state != 'US') %>%
+  filter(countycode != '000')
+
+# Select columns with less than 20% missing
+rwjf3 <- rwjf2[,apply(is.na(rwjf2), 2, mean) < .2]
+
+apply(rwjf3, 2, mean)
 
 
 #readr::write_csv(rover, here::here('survey_data.csv'))
