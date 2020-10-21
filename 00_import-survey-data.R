@@ -65,7 +65,11 @@ rwjf2 <-
 # Select columns with less than 20% missing
 rwjf3 <- rwjf2[,apply(is.na(rwjf2), 2, mean) < .2]
 
-apply(rwjf3, 2, mean)
+
+#Impute missing values with the column mean
+rwjf_M <- as.matrix(rwjf3[,8:dim(rwjf3)[2]])
+colmeans <- apply(rwjf_M, 2, mean, na.rm=TRUE)
+missing_elements <- which(is.na(rwjf_M), arr.ind = FALSE)
+rwjf_M[missing_elements] <- as.vector(colmeans[which(is.na(rwjf_M), arr.ind = TRUE)[,2]])
 
 
-#readr::write_csv(rover, here::here('survey_data.csv'))
