@@ -1,0 +1,48 @@
+---
+title: "Descriptive Paper"
+author: "Joe Dean - Degenerate Hessians"
+date: "November 7, 2020"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Descriptive Paper (1,000 words max., suggested breakdown below)
+
+### Introduction (100 words)
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+### Problem Description (100 words)
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+### Broad Approach (200 words)
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+### Technical Details of Approach (400 words)
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+---
+To create the Virus Belief profiles, we used a clustering algorithm.  Since the data consisted of TRUE/FALSE survey responses, algorithms such as k-means were not appropriate, so we fit the model as a mixture of bernoulli vectors and used expectation-maximization to estimate the parameters.  
+
+### Results (100 words)
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+
+### Impact (100 words)
+
+bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded

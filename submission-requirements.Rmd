@@ -26,35 +26,19 @@ Barriers to health seeks to seeks to give local community members and leaders th
 #### Briefly describe your approach. (60 words)
 
 
-#### What makes your project unique? (40 words)
+#### What makes your project unique? (36/40 words)
 
-While many projects rightly focus on the spread of the virus, this can be very hard to predict.  Our team instead decided to focus on highlighting the one thing we can control--our own actions and behaviors.  While 
+While many data projects rightly focus on the spread of the virus, this can be very hard to accurately predict.  This project instead focuses on the one thing we can control--our own attitudes and behaviors.   
 
 #### What is the potential impact of your results in the fight against COVID-19? (20 words)
 
-Hopefully, we can educate others on ---- and perhaps even help local leaders.  
+
+
 
 ## Non-Technical Abstract (100 words max.)
 
 A compelling summary of your submission, composed for a general audience.
 
-## Descriptive Paper (1,000 words max., suggested breakdown below)
-
-### Introduction (100 words)
-
-### Problem Description (100 words)
-
-### Broad Approach (200 words)
-
-### Technical Details of Approach (400 words)
-
-To create the Virus Belief profiles, we used a clustering algorithm.  Since the data consisted of TRUE/FALSE survey responses, algorithms such as k-means were not appropriate, so we fit the model as a mixture of bernoulli vectors and used expectation-maximization to estimate the parameters.  
-
-### Results (100 words)
-
-
-
-### Impact (100 words)
 
 
 ## Demo video (60-120 seconds)
