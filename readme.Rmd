@@ -1,0 +1,16 @@
+---
+title: "Barriers to Health Project"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Barriers to Health
+
+This repository includes all the code used for the Barriers to Health submission by Degenerate Hessians.  
+
+
+
+

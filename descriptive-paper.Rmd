@@ -10,7 +10,6 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-## Descriptive Paper (1,000 words max., suggested breakdown below)
 
 ### Introduction (100 words)
 

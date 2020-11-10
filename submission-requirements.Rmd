@@ -17,18 +17,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Questionnaire (200 words max.)
 
-### Briefly describe the broader goals of your project. (40 words)
+### Briefly describe the broader goals of your project. (40/40 words)
 
-Barriers to health seeks to seeks to give local community members and leaders the knowledge they need to overcome local obstacles to health.  County-level views of the data 
+Barriers to health seeks to give community members and leaders tools to overcome local obstacles in the fight against COVID-19, whether it's attitudes, beliefs, or behaviors.  The hope is to encourage local action and conversation rather than villainize or blame.  
 
-#### What specific problem are you trying to solve for this submission? (40 words)
+#### What specific problem are you trying to solve for this submission? (36/40 words)
 
-#### Briefly describe your approach. (60 words)
+Using survey data on attitudes toward COVID, public health measures such as vaccine rates, and social determinants of health, this project aims to show at a county level what is likely to impede progress against COVID-19.
+
+#### Briefly describe your approach. (58/60 words)
+
+Barriers are taken from a combination of modeling techniques and direct data sourcing via COVID-19 data lake and the Robert Wood Johnson Foundation.  
+
+A bespoke bernoulli mixture model was developed to create belief profiles from survey data.  County-level attitudes were inferred by multi-level matching census data to the most explanatory county-level features.
+
+A leaflet map visualizes the results.  
 
 
-#### What makes your project unique? (36/40 words)
+#### What makes your project unique? (40/40 words)
 
-While many data projects rightly focus on the spread of the virus, this can be very hard to accurately predict.  This project instead focuses on the one thing we can control--our own attitudes and behaviors.   
+While many data and analytics projects rightly focus on the spread of the virus, this can be very hard to accurately predict.  This project instead focuses on insights into the one thing we can control--our own attitudes and behaviors.   
 
 #### What is the potential impact of your results in the fight against COVID-19? (20 words)
 
@@ -37,13 +45,10 @@ While many data projects rightly focus on the spread of the virus, this can be v
 
 ## Non-Technical Abstract (100 words max.)
 
-A compelling summary of your submission, composed for a general audience.
-
+Do you feel overwhelmed and anxious reading Coronavirus news everyday?  
 
 
 ## Demo video (60-120 seconds)
-
-Our demo video can be viewed online here: 
 
 
 ## A creative expression of the solution, designed to sell it, while explaining:
