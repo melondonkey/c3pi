@@ -1,4 +1,4 @@
-
+library(ggplot2)
 
 ggplot(surveys, aes(x=coronavirusConcern)) + geom_histogram()
 
@@ -6,7 +6,7 @@ ggplot(surveys, aes(x=birthYear2020, y=coronavirusConcern)) + stat_smooth() #old
 
 
 
-ggplot(surveys, aes(x=politicalBelief, y=coronavirusIntent_Mask)) + stat_smooth() #heavy libs also high?
+ggplot(surveys, aes(x=politicalBelief, y=coronavirusIntent_Mask)) + stat_smooth() #heavy liberal also low?
 
 ggplot(surveys, aes(x=politicalParty, y=coronavirusIntent_Mask)) + stat_smooth() #saggy center
 

@@ -3,7 +3,7 @@ library(jsonlite)
 library(here)
 library(extraDistr)
 source(here::here('example-files', 'c3aidatalake.R'))
-
+library(dplyr)
 
 ##Pull survey data
 surveys <- 
@@ -18,32 +18,48 @@ surveys <-
 )
 
 
+surveys <-
+  surveys %>%
+  mutate(
+    census_race = case_when(
+      ethnicity == "white" ~ "White alone",
+      ethnicity == "black" ~ "Black or African American alone",
+      ethnicity == "asian" ~ "Asian alone",
+      ethnicity == "hispanic-latino"
+    )
+  )
+
+
+
 #Census data -- too big
-#census <- 
-#  fetch(
-#    "populationdata",
-#    list(
-#      spec = list(
-#        limit = -1,
-#        filter= 'contains(id, "_UnitedStates" ) && origin == "United States Census" '
-#      )
-#    ),
-#    get_all = TRUE
-#  )
+census <- 
+  fetch(
+    "populationdata",
+    list(
+      spec = list(
+        limit = 100,
+        filter= 'contains(id, "_UnitedStates" ) && origin == "United States Census"'
+      )
+    ),
+    get_all = FALSE
+  )
 
-
+#Pull all the counties
 locations <- 
   fetch(
     "outbreaklocation",
     list(
       spec = list(
-        limit = 200,
-        filter= 'contains(id, "_UnitedStates" ) && locationType == "county"' #,
- #       include = 'this, LaborDetail.laborForce'
+        limit = -1,
+        filter= 'contains(id, "_UnitedStates" ) && locationType == "county"' ,
+        include = 'this, LaborDetail.laborForce'
       )
     ),
-    get_all = FALSE
+    get_all = TRUE
   )
+
+
+### RWJF Pull and cleanse ###
 
 # Pull Robert Wood Johnson Foundation county health rankings
 rwjf_link <- "https://www.countyhealthrankings.org/sites/default/files/analytic_data2018_0.csv" 
@@ -66,10 +82,15 @@ rwjf2 <-
 rwjf3 <- rwjf2[,apply(is.na(rwjf2), 2, mean) < .2]
 
 
-#Impute missing values with the column mean
+#Impute missing values with the column mean and create matrix format
 rwjf_M <- as.matrix(rwjf3[,8:dim(rwjf3)[2]])
 colmeans <- apply(rwjf_M, 2, mean, na.rm=TRUE)
 missing_elements <- which(is.na(rwjf_M), arr.ind = FALSE)
 rwjf_M[missing_elements] <- as.vector(colmeans[which(is.na(rwjf_M), arr.ind = TRUE)[,2]])
+
+rwjf_df <- rwjf3
+
+#Cleanup
+rm(rwjf, rwjf2, rwjf3)
 
 

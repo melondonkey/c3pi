@@ -1,6 +1,6 @@
 # Bernmix stuff
-#require(extraDistr)
-#require(pheatmap)
+library(extraDistr)
+library(pheatmap)
 
 compute_expectation <- function(X, p){
   apply(apply(X, 1, extraDistr::dbern, p=p, log=TRUE), 2, sum)
@@ -94,22 +94,4 @@ plot.BernoulliMixture <- function(x){
                      angle_col = 0
   )
 }
-  
-X <- surveys[,c("coronaSimilarFlu", "coronaOnlyElderly","youngInvulnerable","elderlyMoreRisk","coronaAllHospitalize","coronaKillsMost","ethnicitySpreadsCovid","allSpreadCovid",
-                "nonNativesSpreadCovid","asymptomaticSpread","onlySickSpread","infectFromAnimal")]
-
-X2 <- as.matrix(X*1)
-
-
-# Try many clusters
-set.seed(123)
-
-##3-4 best
-bmix <- bernoulli_mixture(X2, 3, EM_steps = 100)
-bmix$convergence
-
-plot(bmix)
-
-surveys$belief_cluster <- paste0('Cluster ',bmix$cluster_assignments)
-
-  
+ 
