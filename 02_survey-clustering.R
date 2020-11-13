@@ -1,4 +1,4 @@
-
+#install.packages('pheatmap')
 source(here::here('functions', 'bernoulli-mixture-funs.R'))
 Rcpp::sourceCpp(here::here('functions', 'bernLikeC.cpp'))
 

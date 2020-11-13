@@ -1,9 +1,18 @@
+if (!require(extraDistr)) install.packages('extraDistr')
+if (!require(here)) install.packages('here')
+if (!require(httr)) install.packages('httr')
+if (!require(jsonlite)) install.packages('jsonlite')
+if (!require(dplyr)) install.packages('dplyr')
+if (!require(readr)) install.packages('readr')
+if (!require(tidyverse)) install.packages('tidyverse')
+
 library(httr)
 library(jsonlite)
 library(here)
 library(extraDistr)
 source(here::here('example-files', 'c3aidatalake.R'))
 library(dplyr)
+library(readr)
 
 ##Pull survey data
 surveys <- 
@@ -18,16 +27,16 @@ surveys <-
 )
 
 
-surveys <-
-  surveys %>%
-  mutate(
-    census_race = case_when(
-      ethnicity == "white" ~ "White alone",
-      ethnicity == "black" ~ "Black or African American alone",
-      ethnicity == "asian" ~ "Asian alone",
-      ethnicity == "hispanic-latino"
-    )
-  )
+#surveys <-
+#  surveys %>%
+#  mutate(
+#    census_race = case_when(
+#      ethnicity == "white" ~ "White alone",
+#      ethnicity == "black" ~ "Black or African American alone",
+#      ethnicity == "asian" ~ "Asian alone",
+#      ethnicity == "hispanic-latino"
+#    )
+#  )
 
 
 
