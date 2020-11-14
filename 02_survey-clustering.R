@@ -41,10 +41,10 @@ png(filename = here::here('images', 'cluster-summaries.png'))
 dev.off()
 
 ##Add back to the data
-surveys$belief_clusterid <- bmix$cluster_assignments
+surveys_sdoh$belief_clusterid <- bmix$cluster_assignments
 
-surveys <- 
-  surveys %>%
+surveys_sdoh <- 
+  surveys_sdoh %>%
   mutate(
     cluster = case_when(
       belief_clusterid == 1 ~ 'Sick Only',
@@ -56,4 +56,4 @@ surveys <-
   )
 
 #cleanup
-rm(X, X2, bmix)
+rm(X, X2, bmix, surveys, locations, rwjf_pc, fips_to_zip3)

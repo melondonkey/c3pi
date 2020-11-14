@@ -40,18 +40,18 @@ surveys <-
 
 
 
-#Census data -- too big
-census <- 
-  fetch(
-    "populationdata",
-    list(
-      spec = list(
-        limit = 100,
-        filter= 'contains(id, "_UnitedStates" ) && origin == "United States Census"'
-      )
-    ),
-    get_all = FALSE
-  )
+#Census data
+#census <- 
+#  fetch(
+#    "populationdata",
+#    list(
+#      spec = list(
+#        limit = 100,
+#        filter= 'contains(id, "_UnitedStates" ) && origin == "United States Census"'
+#      )
+#    ),
+#    get_all = FALSE
+#  )
 
 #Pull all the counties
 locations <- 
@@ -101,5 +101,41 @@ rwjf_df <- rwjf3
 
 #Cleanup
 rm(rwjf, rwjf2, rwjf3)
+
+
+
+### ZIP to FIPS from HUD https://www.huduser.gov/portal/datasets/usps_crosswalk.html 
+zip_fips <- read_csv('ZIP_COUNTY_092020.csv')
+
+# Select most highest residential pct for match
+zip_fips2 <- 
+  zip_fips %>% 
+  group_by(ZIP) %>%
+  arrange(ZIP, -RES_RATIO) %>%
+  mutate(
+    rownum = row_number(),
+    zip3 = as.numeric(substr(ZIP,1,3)), #numeric to match zip column in surveys
+    fips_code = as.character(COUNTY)
+  ) %>%
+  filter(rownum == 1) %>%
+  ungroup()
+
+
+locations2 <- locations[locations$fips != "NULL",] #Remove invalid FIPS
+locations2$fips2 <- unlist(locations2$fips) #unlist the fips column
+locations2$fips_code <- as.character(formatC(as.numeric(locations2$fips2), digits=5, width=5, flag="0")) #formatting
+
+fips_to_zip3 <- 
+  locations2 %>%
+  select(fips_code, latestTotalPopulation) %>%
+  left_join(zip_fips2 %>% select(zip3, fips_code) %>% distinct(), by=c("fips_code")) %>%
+  group_by(zip3) %>%
+  arrange(zip3, -latestTotalPopulation) %>%
+  mutate(
+    rownum = row_number()
+  ) %>%
+  filter(rownum==1)
+
+rm(locations2, zip_fips, zip_fips2)
 
 

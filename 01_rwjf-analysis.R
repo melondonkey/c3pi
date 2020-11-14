@@ -24,3 +24,9 @@ rwjf_pc <- cbind.data.frame(rwjf_df[,c(1:7)], rwjf_M, pca_data)
 
 #cleanup
 rm(p1, rwjf_std, rwjf_M, pca_data, rwjf_df)
+
+surveys_sdoh <-
+  surveys %>%
+  left_join (fips_to_zip3, by=c('zipcodePrefix'='zip3')) %>%
+  left_join(rwjf_pc, by=c('fips_code'='fipscode'))
+
