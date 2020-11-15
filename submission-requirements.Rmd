@@ -23,16 +23,11 @@ Barriers to health seeks to give community members and leaders tools to overcome
 
 #### What specific problem are you trying to solve for this submission? (36/40 words)
 
-Using survey data on attitudes toward COVID, public health measures such as vaccine rates, and social determinants of health, this project aims to show at a county level what is likely to impede progress against COVID-19.
+
 
 #### Briefly describe your approach. (58/60 words)
 
-Barriers are taken from a combination of modeling techniques and direct data sourcing via COVID-19 data lake and the Robert Wood Johnson Foundation.  
-
-A bespoke bernoulli mixture model was developed to create belief profiles from survey data.  County-level attitudes were inferred by multi-level matching census data to the most explanatory county-level features.
-
-A leaflet map visualizes the results.  
-
+We merged survey and census data from c3.ai's data lake with county health data from Robert Wood Johnson Foundation.  We created virus belief profiles using a bespoke Bernoulli mixture model and then used various supervised machine learning techniques and Bayesian statistical modeling to find the drivers of attitudes, beliefs, and behaviors around COVID-19.  We used R, Stan, and C++.     
 
 #### What makes your project unique? (40/40 words)
 
@@ -45,8 +40,7 @@ While many data and analytics projects rightly focus on the spread of the virus,
 
 ## Non-Technical Abstract (100 words max.)
 
-Do you feel overwhelmed and anxious reading Coronavirus news everyday?  
-
+While many are doing all they can as individuals to stop the spread of COVID, we must admit there is more progress to be made on this front.  In the face of isolation and online echo chambers, it can be easy to choose stereotypes and shorthand to explain others' attitudes and behaviors.  Surveys, on the other hand, can help ground us in data and understand different perspectives.  Combining these surveys with socio-economic factors and existing social determinants of health data can help us dig deeper into how COVID-19 threatens to amplify existing health disparities around the country.  
 
 ## Demo video (60-120 seconds)
 

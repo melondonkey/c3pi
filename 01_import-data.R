@@ -99,7 +99,8 @@ rwjf_M[missing_elements] <- as.vector(colmeans[which(is.na(rwjf_M), arr.ind = TR
 
 rwjf_df <- rwjf3
 
-
+#Cleanup
+rm(rwjf, rwjf2, rwjf3)
 
 
 
@@ -135,8 +136,6 @@ fips_to_zip3 <-
   ) %>%
   filter(rownum==1)
 
-#Cleanup
-rm(rwjf, rwjf2, rwjf3)
 rm(locations2, zip_fips, zip_fips2)
 
 

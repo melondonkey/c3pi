@@ -21,11 +21,11 @@ bmix$convergence
 
 plot(bmix, main="Clusters")
 
-#Cluster 1 = skeptical
-#Cluster 2 = suspicious
+#Cluster 1 = suspicious
+#Cluster 2 = 
 #Cluster 3 = scientific
 
-png(filename = here::here('images', 'cluster-summaries.png'))
+
 #Save the cluster profiles
 pheatmap::pheatmap(t(bmix$parameters),
                    cluster_rows = FALSE,
@@ -37,6 +37,7 @@ pheatmap::pheatmap(t(bmix$parameters),
                    
 )
 
+png(filename = here::here('images', 'cluster-summaries.png'))
 dev.off()
 
 ##Add back to the data

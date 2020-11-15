@@ -1,7 +1,7 @@
 ---
-title: "Descriptive Paper"
+title: "The Social Determinants of COVID Attitudes"
 author: "Joe Dean - Degenerate Hessians"
-date: "November 7, 2020"
+date: "November 18, 2020"
 output:
   word_document: default
   html_document: default
@@ -13,35 +13,37 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Introduction (100 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
 
 ### Problem Description (100 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
 
-### Broad Approach (200 words)
+### Broad Approach (97/200 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+Rather than focusing on the biological and medical aspects of the virus, we wanted to investigate the attitudes and beliefs around COVID, as it represents a great opportunity area for fighting the virus--convincing others to do what we already know works.  Fortunately, c3.ai's COVID data lake provided rich resources to do so.  Our key idea was to combine the survey and location data with data from the Robert Wood Johnson foundation (RWJF).  The RWJF county health rankings data is rich with features on health outcomes as well as social and environment factors that affect health.     
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
 
-### Technical Details of Approach (400 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+### Technical Details of Approach (220/400 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+To summarize beliefs about the virus, we took the 12 TRUE/FALSE questions from the survey and looked for subgroups of common answers by using cluster analysis.  Since the data consists of binary responses, popular algorithms such as k-means which rely on Euclidean distance were not appropriate.  Instead we implemented a Bernoulli mixture model in C++ and R which models the answers as realizations of a set of Bernoulli distributions and converges on the parameters via expectation-maximization.  
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+The resulting cluster profiles are illustrated below.  Each column represents a cluster and each row a survey response.  Darker cells indicate a higher probability of a TRUE response for that question.  After some experimentation we found three clusters best explained the data:
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
+![Cluster Summaries](images/cluster-summaries.png)
 
----
-To create the Virus Belief profiles, we used a clustering algorithm.  Since the data consisted of TRUE/FALSE survey responses, algorithms such as k-means were not appropriate, so we fit the model as a mixture of bernoulli vectors and used expectation-maximization to estimate the parameters.  
+1.  **Skeptical** -- We see their profile on the left.  This is roughly 25% of respondents.  They believe all can spread COVID but don't acknowledge asymptomatic spread or the risk to elderly.  
+2.  **Suspicious** -- This group, representing about 29% of respondents, largely believes animals, non-natives, and ethnicity are primary factors in the spead of the virus.  
+3.  **Scientific** -- This third cluster seen on the right (46% of respondents) represents scientific beliefs about the virus and its properties.  Asymptomatic spread is acknowledged as is the risk of all for being hospitalized.
+
+
+But what is behind these attitudes and beliefs?  
+
+
+
+
 
 ### Results (100 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
 
 ### Impact (100 words)
 
-bustling degree flimsy shade defeated depend animal raspy exercise honey guiltless venomous disgusted match gigantic freezing edge wiggly coil arch sock squeal angle flesh bite-sized messy dust mark well-made used follow crowded boat lackadaisical burst uppity frantic unsightly excellent note disagree chemical subdued tasteful instrument frame roll bewildered hang imminent train married unbecoming representative scarf children delay loutish ignore pump well-off clean curl driving axiomatic sun cactus lean rhetorical pretty unkempt nail water farm x-ray horses sign beautiful unbiased shaggy happy eggnog shrill wash club whine rub great solid command memory unusual pollution small grotesque car flow skin crooked jaded
