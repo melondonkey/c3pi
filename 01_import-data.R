@@ -99,6 +99,10 @@ rwjf_M[missing_elements] <- as.vector(colmeans[which(is.na(rwjf_M), arr.ind = TR
 
 rwjf_df <- rwjf3
 
+rwjf_reference <-
+  rwjf_reference %>%
+  filter(variable %in% colnames(rwjf_df))
+
 #Cleanup
 rm(rwjf, rwjf2, rwjf3)
 
@@ -127,7 +131,8 @@ locations2$fips_code <- as.character(formatC(as.numeric(locations2$fips2), digit
 
 fips_to_zip3 <- 
   locations2 %>%
-  select(fips_code, latestTotalPopulation) %>%
+  select(-one_of('location', 'fips')) %>%
+  #  select(fips_code, latestTotalPopulation) %>%
   left_join(zip_fips2 %>% select(zip3, fips_code) %>% distinct(), by=c("fips_code")) %>%
   group_by(zip3) %>%
   arrange(zip3, -latestTotalPopulation) %>%

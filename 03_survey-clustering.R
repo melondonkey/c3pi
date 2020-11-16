@@ -19,7 +19,7 @@ set.seed(345)
 bmix <- bernoulli_mixture(X2, 3, EM_steps = 100)
 bmix$convergence
 
-plot(bmix, main="Clusters")
+plot(bmix)
 
 #Cluster 1 = suspicious
 #Cluster 2 = 
@@ -32,8 +32,7 @@ pheatmap::pheatmap(t(bmix$parameters),
                    cluster_cols = FALSE,
                    col = grDevices::colorRampPalette(RColorBrewer::brewer.pal(9,"Blues"))(25), 
                    labels_col = paste0(round(bmix$mixture_distribution,2)*100,'%'),
-                   angle_col = 0,
-                   main = 'Cluster Profiles'
+                   angle_col = 0
                    
 )
 
@@ -47,13 +46,18 @@ surveys_sdoh <-
   surveys_sdoh %>%
   mutate(
     cluster = case_when(
-      belief_clusterid == 1 ~ 'Sick Only',
+      belief_clusterid == 1 ~ 'Skeptical',
       belief_clusterid == 2 ~ 'Suspicious',
       belief_clusterid == 3 ~ 'Scientific',
       TRUE ~ 'OTHER'
-      
-    )
+    ),
+    suspicious = ifelse(cluster=="Suspicious", 1, 0),
+    skeptical = ifelse(cluster=="Skeptical", 1, 0),
+    scientific = ifelse(cluster=="Scientific", 1, 0),
+    age = 2020 - birthYear2020 
   )
+
+
 
 #cleanup
 rm(X, X2, bmix, surveys, locations, rwjf_pc, fips_to_zip3)

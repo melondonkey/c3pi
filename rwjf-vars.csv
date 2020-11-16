@@ -1,0 +1,71 @@
+variable,description
+county,Name
+county_ranked,County Ranked (Yes=1/No=0)
+countycode,County FIPS Code
+fipscode,5-digit FIPS Code
+state,State Abbreviation
+statecode,State FIPS Code
+v001_rawvalue,Premature death raw value
+v002_rawvalue,Poor or fair health raw value
+v003_rawvalue,Uninsured adults raw value
+v004_rawvalue,Primary care physicians raw value
+v005_rawvalue,Preventable hospital stays raw value
+v007_rawvalue,Diabetes monitoring raw value
+v009_rawvalue,Adult smoking raw value
+v011_rawvalue,Adult obesity raw value
+v014_rawvalue,Teen births raw value
+v021_rawvalue,High school graduation raw value
+v023_rawvalue,Unemployment raw value
+v024_rawvalue,Children in poverty raw value
+v036_rawvalue,Poor physical health days raw value
+v037_rawvalue,Low birthweight raw value
+v039_rawvalue,Motor vehicle crash deaths raw value
+v042_rawvalue,Poor mental health days raw value
+v043_rawvalue,Violent crime raw value
+v044_rawvalue,Income inequality raw value
+v045_rawvalue,Sexually transmitted infections raw value
+v049_rawvalue,Excessive drinking raw value
+v050_rawvalue,Mammography screening raw value
+v051_rawvalue,Population raw value
+v052_rawvalue,% below 18 years of age raw value
+v053_rawvalue,% 65 and older raw value
+v054_rawvalue,% Non-Hispanic African American raw value
+v055_rawvalue,% American Indian and Alaskan Native raw value
+v056_rawvalue,% Hispanic raw value
+v057_rawvalue,% Females raw value
+v058_rawvalue,% Rural raw value
+v059_rawvalue,% not proficient in English raw value
+v060_rawvalue,Diabetes prevalence raw value
+v062_rawvalue,Mental health providers raw value
+v063_rawvalue,Median household income raw value
+v065_rawvalue,Children eligible for free or reduced price lunch raw value
+v067_rawvalue,Driving alone to work raw value
+v069_rawvalue,Some college raw value
+v070_rawvalue,Physical inactivity raw value
+v080_rawvalue,% Native Hawaiian/Other Pacific Islander raw value
+v081_rawvalue,% Asian raw value
+v082_rawvalue,Children in single-parent households raw value
+v083_rawvalue,Limited access to healthy foods raw value
+v085_rawvalue,Uninsured raw value
+v086_rawvalue,Health care costs raw value
+v088_rawvalue,Dentists raw value
+v122_rawvalue,Uninsured children raw value
+v124_rawvalue,Drinking water violations raw value
+v125_rawvalue,Air pollution - particulate matter raw value
+v126_rawvalue,% Non-Hispanic white raw value
+v127_rawvalue,Premature age-adjusted mortality raw value
+v131_rawvalue,Other primary care providers raw value
+v132_rawvalue,Access to exercise opportunities raw value
+v133_rawvalue,Food environment index raw value
+v134_rawvalue,Alcohol-impaired driving deaths raw value
+v135_rawvalue,Injury deaths raw value
+v136_rawvalue,Severe housing problems raw value
+v137_rawvalue,Long commute - driving alone raw value
+v139_rawvalue,Food insecurity raw value
+v140_rawvalue,Social associations raw value
+v142_rawvalue,Residential segregation - non-white/white raw value
+v143_rawvalue,Insufficient sleep raw value
+v144_rawvalue,Frequent physical distress raw value
+v145_rawvalue,Frequent mental distress raw value
+v146_rawvalue,Drug overdose deaths - modeled raw value
+year,Release Year
