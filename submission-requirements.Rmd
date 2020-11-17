@@ -19,11 +19,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Briefly describe the broader goals of your project. (40/40 words)
 
-Barriers to health seeks to give community members and leaders tools to overcome local obstacles in the fight against COVID-19, whether it's attitudes, beliefs, or behaviors.  The hope is to encourage local action and conversation rather than villainize or blame.  
+This project aims to combine survey and location data with health outcomes and social determinants to see what drives attitudes, beliefs, and behaviors about COVID-19.    
 
 #### What specific problem are you trying to solve for this submission? (36/40 words)
 
-
+No sane marketer would adopt the same strategy for reaching different demographics.  What if such tailored messaging were used to educate people about Coronavirus and encourage them to adopt behaviors that could make a difference?  
 
 #### Briefly describe your approach. (58/60 words)
 
@@ -35,7 +35,7 @@ While many data and analytics projects rightly focus on the spread of the virus,
 
 #### What is the potential impact of your results in the fight against COVID-19? (20 words)
 
-
+To change behaviors--we need to start with beliefs.  Profiling beliefs and finding their drivers can help change attitudes.  
 
 
 ## Non-Technical Abstract (100 words max.)

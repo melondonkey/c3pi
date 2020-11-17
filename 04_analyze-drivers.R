@@ -104,6 +104,12 @@ X4 <- model.matrix( ~ - 1 +
                     data=data
                       )
 
+#stuff we can match to census data
+X5 <- model.matrix(~  age + gender + ethnicity + education  - 1, 
+                   data = data)
+
+
+ # Record AUC of each variable set - CV test
 ## Drivers of supsicious
 # X0 = .712
 # X1 = .709
@@ -114,15 +120,16 @@ X4 <- model.matrix( ~ - 1 +
 #X0 = .772
 #X1 = .771
 #X2 = .807
-#X4 = 
+#X4 =  .800
+#X5 = .763
 
 # Drivers of skeptic
 
 #X4 = .643
 
-y <- data$skeptical
+y <- data$scientific
 
-X <- X4
+X <- X5
 
 
 xgb1 <-
