@@ -61,3 +61,6 @@ surveys_sdoh <-
 
 #cleanup
 rm(X, X2, bmix, surveys, locations, rwjf_pc, fips_to_zip3)
+
+
+

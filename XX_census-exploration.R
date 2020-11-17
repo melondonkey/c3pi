@@ -3,11 +3,11 @@ census <-
     "populationdata",
     list(
       spec = list(
-        limit = -1,
-        filter= 'contains(id, "Cobb" ) && origin == "United States Census"'
+        limit = 100,
+        filter= 'contains(id, "_UnitedStates" ) && origin == "United States Census"'
       )
     ),
-    get_all = TRUE
+    get_all = FALSE
   )
 
 #this census data does not have breakdowns by race

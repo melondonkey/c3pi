@@ -1,3 +1,5 @@
+if (!require(xgboost)) install.packages('xgboost')
+
 library(xgboost)
 library(dplyr)
 
@@ -110,26 +112,26 @@ X5 <- model.matrix(~  age + gender + ethnicity + education  - 1,
 
 
  # Record AUC of each variable set - CV test
-## Drivers of supsicious
+## Drivers of supsicious #1B998B
 # X0 = .712
 # X1 = .709
 # X2 = .734
 # X4 = .726
 
-# Drivers of scientific
+# Drivers of scientific #C70039
 #X0 = .772
 #X1 = .771
 #X2 = .807
 #X4 =  .800
 #X5 = .763
 
-# Drivers of skeptic
+# Drivers of skeptic #009FFD
 
 #X4 = .643
 
-y <- data$scientific
+y <- data$skeptical
 
-X <- X5
+X <- X4
 
 
 xgb1 <-
@@ -154,4 +156,19 @@ xgb_model <-
   )
 
 importance <- xgb.importance(feature_names = colnames(X), model = xgb_model) 
-View(importance)
+#View(importance)
+
+#Plot for writeup.  Manually changed the dataset
+importance %>%
+  arrange(-Gain) %>%
+  mutate(
+    rank = row_number()
+  ) %>%
+  filter(rank <=20) %>%
+  ggplot( aes(x=reorder(Feature, Gain), y=Gain)) + geom_point(size=2, color='#009FFD') + coord_flip() +
+  xlab("Feature") + ylab("Gain (Feature Importance)") +
+  theme_minimal(base_size=14) + 
+  ggtitle('Top 20 Drivers of Skeptical Profile')
+
+
+
