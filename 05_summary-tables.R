@@ -1,6 +1,8 @@
 ## Summary tables
 
 library(tidyr)
+library(dplyr)
+library(ggplot2)
 
 se_prop <- function(x){
   p = mean(x)
@@ -10,7 +12,7 @@ se_prop <- function(x){
 }
 
 se <- function(x){
-  sd(x)/sqrt(length(x))
+  sd(x, na.rm=TRUE)/sqrt(sum(!is.na(x)))
 }
 
 summary_table <- 
@@ -32,7 +34,11 @@ summary_table <-
     avg_political = mean(politicalParty),
     se_political = se(politicalParty),
     avg_religiosity = mean(religiosity),
-    se_religiosity = se(religiosity)
+    se_religiosity = se(religiosity),
+    avg_mask = mean(coronavirusIntent_Mask, na.rm=TRUE),
+    se_mask = se(coronavirusIntent_Mask),
+    avg_socialdist = mean(coronavirusIntent_SixFeet, na.rm=TRUE),
+    se_socialdist = se(coronavirusIntent_SixFeet)
   )
 
 summary2 <- 
@@ -51,7 +57,7 @@ summary3 <-
   )
 
 
-myvar <- 'political'
+myvar <- 'socialdist'
 summary3 %>%
   filter(variable==myvar) %>%
   ggplot(aes(x=cluster, y=avg, color=cluster)) + geom_point(size=3) +
@@ -61,7 +67,7 @@ summary3 %>%
   theme_minimal(base_size=15)  +
   theme(legend.position = 'none') +
   xlab('') + 
-  ylab('Average Republican Affliation')
+  ylab('Average Intent to Maintain 6 Feet Distance')
 
 ggsave(here::here('images', paste0(myvar, '.png')), width=7, height=2)
   

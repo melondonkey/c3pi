@@ -39,7 +39,7 @@ To summarize beliefs about the virus, we took the 12 TRUE/FALSE questions from t
 
 The resulting cluster profiles are illustrated below.  Each column represents a cluster and each row a survey response.  Darker cells indicate a higher probability of a TRUE response for that question.  After some experimentation we found three clusters best explained the data:
 
-![Cluster Summaries](images/cluster-summaries.png)
+
 
 1.  **Skeptical** -- We see their profile on the left.  This is roughly 25% of respondents.  They believe all can spread COVID but don't acknowledge asymptomatic spread or the risk to elderly.  
 2.  **Suspicious** -- This group, representing about 29% of respondents, largely believes animals, non-natives, and ethnicity are primary factors in the spead of the virus.  
@@ -53,9 +53,6 @@ We tried standardizing the RWJF data, imputing means to the missing values, and 
 
 We used the xgboost implementation of gradient boosting in R to perform the driver analysis.  We chose this method for a number of reasons: 1) it easily finds variable interactions; 2) it allows for non-linear relationships of continuous values; 3) it converges quickly on large datasets; 4) it is robust to correlated features.  We used 10-fold cross-validation and measured the AUC of the test sets.  The main idea was to start with base demographic features and see if adding new ones raised the test AUC.  This would indicate whether the variables added additional predictive value. We focused on finding drivers of the scientific belief set and the suspicious belief set, as these are the extremes.   
 
-```{r, echo=FALSE, results='asis'}
-flextable::flextable(readr::read_csv(here::here('rwjf-vars.csv')))
-```
 
 ### Results 
 

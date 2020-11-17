@@ -17,7 +17,7 @@ set.seed(345)
 
 ##3-4 best
 bmix <- bernoulli_mixture(X2, 3, EM_steps = 100)
-bmix$convergence
+#bmix$convergence
 
 plot(bmix)
 
@@ -25,7 +25,7 @@ plot(bmix)
 #Cluster 2 = 
 #Cluster 3 = scientific
 
-
+#png(filename = here::here('images', 'cluster-summaries.png'))
 #Save the cluster profiles
 pheatmap::pheatmap(t(bmix$parameters),
                    cluster_rows = FALSE,
@@ -36,8 +36,8 @@ pheatmap::pheatmap(t(bmix$parameters),
                    
 )
 
-png(filename = here::here('images', 'cluster-summaries.png'))
-dev.off()
+
+#dev.off()
 
 ##Add back to the data
 surveys_sdoh$belief_clusterid <- bmix$cluster_assignments
